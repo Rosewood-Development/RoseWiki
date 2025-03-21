@@ -1,0 +1,129 @@
+site_name: Rosewood Development
+nav:
+  - Home:
+    - Our Plugins: index.md
+  - RoseLoot:
+    - Introduction: RoseLoot/introduction.md
+    - Commands & Permissions: RoseLoot/commands-&-permissions.md
+    - Overview: RoseLoot/overview.md
+    - Number Providers: RoseLoot/number-providers.md
+    - Pools & Entries: RoseLoot/pools-&-entries.md
+    - Conditions: 
+      - Generic Values: RoseLoot/generic-values.md
+      - Entity-Specific Values: RoseLoot/entity-specific-values.md
+      - Plugin Compatible Values: RoseLoot/plugin-compatible-values.md
+    - Items:
+      - Item Types: RoseLoot/item-types.md
+      - Item Meta: RoseLoot/item-meta.md
+      - Custom Item Plugins: RoseLoot/custom-item-plugins.md
+      - Context Placeholders: RoseLoot/context-placeholders.md
+    - API Usage:
+      - Getting Started: RoseLoot/getting-started.md
+  - RoseChat:
+    - Introduction: RoseChat/introduction.md
+    - Setup Guide: RoseChat/setup-guide.md
+    - Commands & Permissions: RoseChat/commands-&-permissions.md
+    - Configuration Files: RoseChat/configuration-files.md
+    - Features: RoseChat/features.md
+    - Compatibility:
+      - Plugin Compatibility: RoseChat/plugin-compatibility.md
+      - PlaceholderAPI Support: RoseChat/placeholderapi-support.md
+      - Plugin Support: RoseChat/plugin-support.md
+    - Incompatibility: RoseChat/incompatibility.md
+    - FAQ: RoseChat/faq.md
+    - Resource Packs: RoseChat/resource-packs.md
+    - API Usage:
+      - Getting Started: RoseChat/getting-started.md
+      - Parsing Messages: RoseChat/parsing-messages.md
+      - Tokens & Tokenizers: RoseChat/tokens-&-tokenizers.md
+      - Custom Channels: RoseChat/custom-channels.md
+  - RoseStacker:
+    - Introduction: RoseStacker/introduction.md
+    - Commands & Permissions: RoseStacker/commands-&-permissions.md
+    - PlaceholderAPI Support: RoseStacker/placeholderapi-support.md
+    - API Usage:
+      - Getting Started: RoseStacker/getting-started.md
+  - PlayerParticles:
+    - Introduction: PlayerParticles/introduction.md
+    - Configuration: PlayerParticles/configuration.md
+    - Permissions: PlayerParticles/permissions.md
+    - PlaceholderAPI Support: PlayerParticles/placeholderapi-support.md
+    - Particle Details: PlayerParticles/particle-details.md
+    - API Usage:
+      - Getting Started: PlayerParticles/getting-started.md
+      - Javadoc: PlayerParticles/javadoc.md
+      - Object Descriptions: PlayerParticles/object-descriptions.md
+      - Custom Styles: PlayerParticles/custom-styles.md
+  - PlayerPoints:
+    - Introduction: PlayerPoints/introduction.md
+    - Commands & Permissions: PlayerPoints/commands-&-permissions.md
+    - PlaceholderAPI Support: PlayerPoints/placeholderapi-support.md
+    - API Usage:
+      - Getting Started: PlayerPoints/getting-started.md
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: custom
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: custom
+  font:
+    text: Roboto
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.tabs
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+  logo: img/RWD Logo.svg
+  favicon: img/RWD Logo.svg
+extra_css:
+  - style.css
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      permalink: 🔗
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.com/invite/MgUsTBK
+    - icon: fontawesome/brands/github
+      link: https://github.com/Rosewood-Development
+    - icon: fontawesome/solid/download
+      link: https://www.spigotmc.org/resources/authors/esophose.34168/
+    - icon: fontawesome/brands/patreon
+      link: https://www.patreon.com/RosewoodDevelopment
+    - icon: fontawesome/solid/file-zipper
+      link: https://repo.rosewooddev.io/
+    - icon: fontawesome/solid/book
+      link: https://javadoc.rosewooddev.io/

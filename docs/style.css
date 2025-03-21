@@ -1,0 +1,11 @@
+:root {
+    --md-primary-fg-color: #E94057;
+}
+.md-header {
+    background: rgb(138,35,135);
+    background: linear-gradient(90deg, rgba(138,35,135,1) 0%, rgba(233,64,87,1) 50%, rgba(242,113,33,1) 100%);
+}
+.md-tabs {
+    background: rgb(138,35,135);
+    background: linear-gradient(90deg, rgba(138,35,135,1) 0%, rgba(233,64,87,1) 50%, rgba(242,113,33,1) 100%);
+}
