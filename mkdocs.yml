@@ -62,6 +62,7 @@ nav:
       - Getting Started: PlayerPoints/getting-started.md
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -119,8 +120,10 @@ extra:
       link: https://discord.com/invite/MgUsTBK
     - icon: fontawesome/brands/github
       link: https://github.com/Rosewood-Development
-    - icon: fontawesome/solid/download
+    - icon: custom/spigot
       link: https://www.spigotmc.org/resources/authors/esophose.34168/
+    - icon: custom/modrinth
+      link: https://modrinth.com/organization/rosewood-development
     - icon: fontawesome/brands/patreon
       link: https://www.patreon.com/RosewoodDevelopment
     - icon: fontawesome/solid/file-zipper
