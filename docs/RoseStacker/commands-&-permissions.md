@@ -6,8 +6,8 @@ This page contains all of the commands and permissions for RoseStacker.  Scroll 
 | `/rs`       | Shows the current plugin version and the plugin author. The permission for the base command is given by default and can only be revoked. | rosestacker.basecommand |
 | `/rs help`  | Displays a list of the plugin's commands. |  |
 | `/rs reload`| Reloads all of the plugin's files and applies any saved changes made to them. | rosestacker.reload |
-| `/rs give <block\|spawner\|entity> <player> <type> <stackSize> [amount]` | Gives the target player a bundled stack of a specified type. | rosestacker.give |
-| `/rs clearall <entity\|item\|all>` | Clears all of the stack type from the world. | rosestacker.clearall |
+| `/rs give <block|spawner|entity> <player> <type> <stackSize> [amount]` | Gives the target player a bundled stack of a specified type. | rosestacker.give |
+| `/rs clearall <entity|item|all>` | Clears all of the stack type from the world. | rosestacker.clearall |
 | `/rs stats` | Displays stats about the plugin. | rosestacker.stats |
 | `/rs translate <language> <spawnerNameOrder>` | Changes the set names for stacks in all of the settings files.  Spawner stacks cannot be properly translated due to word orders of languages, so follow the in-game prompt to re-run the command and correctly format the spawner stack names. | rosestacker.translate |
 | `/rs stacktool [player]` | Gives yourself or another player the stacking tool. | rosestacker.stacktool.give |
