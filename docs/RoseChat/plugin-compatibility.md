@@ -14,7 +14,7 @@ RoseChat has compatibility added with the following plugins:
 * Vault
     * Allows checking offline players' permissions and using the %vault_rank% placeholder without PlaceholderAPI.
 * PlaceholderAPI
-    * Allows placeholders to be used within chat formats, chat messages, and locale messages. Also adds [custom placeholders](https://github.com/Rosewood-Development/RoseChat/wiki/PlaceholderAPI-Support) to be used in other plugins.
+    * Allows placeholders to be used within chat formats, chat messages, and locale messages. Also adds [placeholders](placeholderapi-support.md) to be used in other plugins.
 * DiscordSRV
     * Allows messages sent from RoseChat to be displayed to and from Discord servers, with full formatting support for both Discord and RoseChat.
 * ProtocolLib
