@@ -21,9 +21,9 @@ You can check for conditions that are specific to certain entities.  These condi
 | **Cat** | `cat-type` | Cat must be a certain type | [Cat Type](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Cat.Type.html), requires 1 or more | `cat-type:siamese` |
 |  | `cat-collar-color` | Cat must have a certain color of collar | [Dye Color](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/DyeColor.html), requires 1 or more | `cat-collar-color:pink` |
 | **Cave Spider** |  |  |  |  |
-| **Chicken** |  |  |  |  |
+| **Chicken** | `chicken-variant` | Chicken must be of a certain variant | [Chicken Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Chicken.Variant.html), requires 1 or more | `chicken-variant:temperate` |
 | **Cod** |  |  |  |  |
-| **Cow** |  |  |  |  |
+| **Cow** | `cow-variant` | Cow must be of a certain variant | [Cow Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Cow.Variant.html), requires 1 or more | `cow-variant:cold` |
 | **Creeper** | `creeper-charged` | Creeper must have been struck by lightning and charged up | None | `creeper-charged` |
 | **Dolphin** |  |  |  |  |
 | **Donkey** |  |  |  |  |
@@ -60,7 +60,7 @@ You can check for conditions that are specific to certain entities.  These condi
 |  | `panda-hidden-gene` | Panda must have a specific hidden gene | [Panda Gene](https://helpch.at/docs/1.16.1/org/bukkit/entity/Panda.Gene.html), requires 1 or more | `panda-hidden-gene:playful` |
 | **Parrot** | `parrot-variant` | Parrot must be a specific variant | [Parrot Variant](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Parrot.Variant.html) | `parrot-variant:blue` |
 | **Phantom** | `phantom-size` | Phantom must be a specific size | Positive Number, requires 1 or more | `phantom-size:2` |
-| **Pig** |  |  |  |  |
+| **Pig** | `pig-variant` | Pig must be of a certain variant | [Pig Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Pig.Variant.html), requires 1 or more | `pig-variant:warm` |
 | **Piglin Brute** | `piglin-brute-converting` | Piglin Brute must be converting to a zombified piglin | None | `piglin-brute-converting` |
 |  | `piglin-brute-immune-to-zombification` | Piglin Brute must be unable to turn into a zombified piglin | None | `piglin-brute-immune-to-zombification` |
 | **Piglin** | `piglin-converting` | Piglin must be converting to a zombified piglin | None | `piglin-converting` |
