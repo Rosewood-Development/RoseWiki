@@ -17,6 +17,7 @@ Not all effects are created equal. Some effects support applying data, such as a
     | ash | None | No | 1.16+ |
     | barrier | None | No | 1.8-1.17 |
     | block | Block Material | No | 1.7+ |
+    | block_crumble | Block Material | No | 1.21.2+ |
     | block_marker | Block Material | No | 1.18+ |
     | bubble | None | Yes | 1.7+ |
     | bubble_column_up | None | Yes | 1.13+ |
@@ -40,9 +41,9 @@ Not all effects are created equal. Some effects support applying data, such as a
     | dripping_water | None | No | 1.7+ |
     | dust | Color | No | 1.7+ |
     | dust_color_transition | Color Transition | No | 1.17+ |
-    | dust_pillar | Block Material | ? | 1.20.5+ |
-    | dust_plume | None | ? | 1.20.5+ |
-    | egg_crack | None | ? | 1.20.5+ |
+    | dust_pillar | Block Material | No | 1.20.5+ |
+    | dust_plume | None | Yes | 1.20.5+ |
+    | egg_crack | None | No | 1.20.5+ |
     | elder_guardian | None | No | 1.8+ (disabled by default) |
     | electric_spark | None | Yes | 1.17+ |
     | enchant | None | Yes | 1.7+ |
@@ -60,6 +61,7 @@ Not all effects are created equal. Some effects support applying data, such as a
     | falling_obsidian_tear | None | No | 1.16+ |
     | falling_spore_blossom | None | No | 1.17+ |
     | falling_water | None | No | 1.7+ |
+    | firefly | None | No | 1.21.5+ |
     | firework | None | Yes | 1.7+ |
     | fishing | None | Yes | 1.7+ |
     | flame | None | Yes | 1.7+ |
@@ -67,15 +69,15 @@ Not all effects are created equal. Some effects support applying data, such as a
     | footstep | None | No | 1.7-1.12 |
     | glow | None | No | 1.17+ |
     | glow_squid_ink | None | Yes | 1.17+ |
-    | gust | None | ? | 1.20.5+ |
-    | gust_emitter_large | None | ? | 1.20.5+ |
-    | gust_emitter_small | None | ? | 1.20.5+ |
+    | gust | None | No | 1.20.5+ |
+    | gust_emitter_large | None | No | 1.20.5+ |
+    | gust_emitter_small | None | No | 1.20.5+ |
     | happy_villager | None | No | 1.7+ |
     | heart | None | No | 1.7+ |
-    | infested | None | ? | 1.20.5+ |
+    | infested | None | No | 1.20.5+ |
     | instant_effect | None | No | 1.7+ |
     | item | Item Material | No | 1.7+ |
-    | item_cobweb | None | ? | 1.20.5+ |
+    | item_cobweb | None | No | 1.20.5+ |
     | item_slime | None | No | 1.7+ |
     | item_snowball | None | No | 1.7+ |
     | landing_honey | None | No | 1.15+ |
@@ -87,23 +89,24 @@ Not all effects are created equal. Some effects support applying data, such as a
     | mycelium | None | No | 1.7+ |
     | nautilus | None | Yes | 1.13+ |
     | note | Note Color | No | 1.9+ |
-    | ominous_spawning | None | ? | 1.20.5+ |
+    | ominous_spawning | None | Yes | 1.20.5+ |
+    | pale_oak_leaves | None | No | 1.21.4+ |
     | poof | None | Yes | 1.7+ |
     | portal | None | Yes | 1.9+ |
-    | raid_omen | None | ? | 1.20.5+ |
+    | raid_omen | None | No | 1.20.5+ |
     | rain | None | No | 1.7+ |
     | reverse_portal | None | Yes | 1.16+ |
     | scrape | None | Yes | 1.17+ |
-    | sculk_charge | None | ? | 1.19+ |
-    | sculk_charge_pop | None | ? | 1.19+ |
-    | sculk_soul | None | ? | 1.19+ |
-    | shriek | None | ? | 1.19+ |
+    | sculk_charge | None | Yes | 1.19+ |
+    | sculk_charge_pop | None | Yes | 1.19+ |
+    | sculk_soul | None | Yes | 1.19+ |
+    | shriek | None | No | 1.19+ |
     | small_flame | None | Yes | 1.17+ |
-    | small_gust | None | ? | 1.20.5+ |
+    | small_gust | None | No | 1.20.5+ |
     | smoke | None | Yes | 1.7+ |
     | sneeze | None | Yes | 1.14+ |
     | snowflake | None | Yes | 1.17+ |
-    | sonic_boom | None | ? | 1.19+ |
+    | sonic_boom | None | No | 1.19+ |
     | soul | None | Yes | 1.16+ |
     | soul_fire_flame | None | Yes | 1.16+ |
     | spell | None | No | 1.7+ |
@@ -112,10 +115,12 @@ Not all effects are created equal. Some effects support applying data, such as a
     | spore_blossom_air | None | No | 1.17+ |
     | squid_ink | None | Yes | 1.13+ |
     | sweep_attack | None | No | 1.9+ |
+    | tinted_leaves | Color | No | 1.21.5+ |
     | totem_of_undying | None | Yes | 1.11+ |
-    | trial_omen | None | ? | 1.20.5+ |
-    | trial_spawner_detection | None | ? | 1.20.5+ |
-    | trial_spawner_detection_ominous | None | ? | 1.20.5+ |
+    | trail | Color | No | 1.21.2+ |
+    | trial_omen | None | No | 1.20.5+ |
+    | trial_spawner_detection | None | Yes | 1.20.5+ |
+    | trial_spawner_detection_ominous | None | Yes | 1.20.5+ |
     | underwater | None | No | 1.7+ |
     | vibration | Vibration | No | 1.17+ (disabled by default) |
     | warped_spore | None | No | 1.16+ |

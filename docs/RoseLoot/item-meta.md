@@ -412,7 +412,7 @@ Applicable to `potion`, `splash_potion`, and `lingering_potion` items.  This is 
 
 `upgraded` can be `true` or `false` and determines if the potion has had glowstone added to it in a brewing stand; setting it to `true` makes it level 2.  `extended` can be `true` or `false` and determines if the potion has had redstone added to it in a brewing stand; setting it to `true` makes it have a longer effect duration.
 
-`custom-effects` allows you to configure additional effects for the potion.  `effect` is the potion effect type.  The `effect` is not the same as the previous `potion-type` and uses different values that can be found [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html).  `duration` is the duration in seconds.  `amplifier` is the level of the effect plus 1; if the amplifier is 1, the effect level will be 2.
+`custom-effects` allows you to configure additional effects for the potion.  `effect` is the potion effect type.  The `effect` is not the same as the previous `potion-type` and uses different values that can be found [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html).  `duration` is the duration in ticks.  `amplifier` is the level of the effect plus 1; if the amplifier is 1, the effect level will be 2.
 
 `ambient` can be `true` or `false`; if `true`, the particles given off by this effect will be transparent.  `particles` can be `true` or `false`; if `false`, no particles be will given off by this effect.  `icon` can be `true` or `false`; if `true`, an icon for the effect will appear in the corner of the player's screen.  `overwrite` can be `true` or `false`; if `true`, it will overwrite any existing effects of the same type on the player when applied.
 ```yaml
