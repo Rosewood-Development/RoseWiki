@@ -304,7 +304,7 @@ pools:
             amount: 1
             flicker: true
             trail: true
-            shape: large_ball
+            shape: ball_large
             colors:
               - '#FF00FF'
               - 'orange'

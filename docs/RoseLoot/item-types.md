@@ -302,7 +302,7 @@ pools:
             deal-damage: false
             flicker: true
             trail: true
-            type: large_ball
+            shape: ball_large
             colors:
               - '#FF00FF'
               - 'orange'
