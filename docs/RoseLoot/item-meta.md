@@ -541,11 +541,13 @@ pools:
             display-name: '&dLoot Bag'
             contents:
               0:
+                type: item
                 item: diamond
                 amount:
                   min: 1
                   max: 3
               1:
+                type: item
                 item: emerald
                 amount:
                   min: 1
