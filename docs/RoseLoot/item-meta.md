@@ -22,6 +22,7 @@ These values will apply to every item that can be dropped.  All values are optio
 | `smelt-if-burning` | `true` or `false` | Only applies to loot tables of type `ENTITY`.  Smelts the resulting item if the looted entity is on fire. |
 | `loot-table` | The key of a loot table installed on your server, either through vanilla or a datapack | Only applies to items that are considered Lootable, such as containers or suspicious sand. |
 | `restore-vanilla-attributes` | `true` or `false` | Enabled by default, restores vanilla attributes to items on 1.21+. |
+| `looter-pickup-only` | `true` or `false` | If true, only the looting player will be able to pick up this item. |
 
 #### Randomly Applied Enchantments
 An item can have random enchantments applied.  The following is an example.
