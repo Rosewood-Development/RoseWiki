@@ -49,7 +49,7 @@ pools:
 The `level` value is the enchantment table equivalent of the enchantments that will be put onto the item.  `treasure` determines if enchantments such as `mending` can be applied to the item.
 
 #### Random Enchantment
-This differs from the above section as this only applies a single enchantment with a randomly chosen level.  If you set `random-enchantments: []` it will pick from every applicable enchantment for the item.
+This differs from the above section as this only applies one or more enchantments with a randomly chosen level.  To apply multiple enchantments, you can set `random-enchantments-amount` to something higher than 1, this value is optional.  If you set `random-enchantments: []` it will pick from every applicable enchantment for the item.  Enchantments exclusive with others or enchantments that aren't applicable for the item being enchanted will not be applied.
 ```yaml
 type: ENTITY
 overwrite-existing: none
@@ -70,6 +70,7 @@ pools:
               - sharpness
               - smite
               - bane_of_arthropods
+            random-enchantments-amount: 1
 ```
 
 #### Enchantments
