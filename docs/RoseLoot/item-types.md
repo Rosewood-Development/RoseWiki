@@ -97,7 +97,7 @@ pools:
 ```
 
 ## Commands
-You can run commands for those more exotic actions you want to perform from loot tables.
+You can run commands for those more exotic actions you want to perform from loot tables.  An optional property called `run-as-player` exists which can be set to true to run the command as the player instead of the console.
 ```yaml
 type: ENTITY
 overwrite-existing: none
@@ -114,6 +114,7 @@ pools:
           0:
             type: command
             value: 'say %player% killed a villager at %x% %y% %z% in %world%!'
+            run-as-player: false
 ```
 You can find valid placeholders to be used within commands on the [Context Placeholders](context-placeholders.md) page.
 
@@ -458,7 +459,6 @@ type: BLOCK
 overwrite-existing: none
 conditions:
   - 'block-type:#logs'
-  - 'blocktracker-natural-block'
 pools:
   0:
     entries:
@@ -469,4 +469,31 @@ pools:
             skill: woodcutting
             give-naturally: true
             amount: 1
+```
+
+## SCore Variables
+[SCore](https://modrinth.com/plugin/score) variables can be set or modified for either a player or globally.  `global` defaults to `false`.  `variable` needs to be set to a valid SCore variable name.  Set `amount` if you are modifying a numerical variable, and use `value` if you are modifying/setting a string variable.  If using `value`, an additional optional `set` property (which defaults to `false`) is available to set the value instead of modify it.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'block-type:#logs'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0: # Using `amount` to add to a numerical variable
+            type: score_variable
+            variable: woodcutting
+            global: false
+            amount:
+              min: 1
+              max: 3
+          1: # Using `value` to set a string variable
+            type: score_variable
+            variable: last_broken_block
+            global: false
+            set: true
+            value: 'log'
 ```
