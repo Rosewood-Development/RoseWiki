@@ -130,3 +130,12 @@ extra:
       link: https://repo.rosewooddev.io/
     - icon: fontawesome/solid/book
       link: https://javadoc.rosewooddev.io/
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        'RoseLoot.md': 'RoseLoot/introduction.md'
+        'RoseChat.md': 'RoseChat/introduction.md'
+        'RoseStacker.md': 'RoseStacker/introduction.md'
+        'PlayerParticles.md': 'PlayerParticles/introduction.md'
+        'PlayerPoints.md': 'PlayerPoints/introduction.md'
