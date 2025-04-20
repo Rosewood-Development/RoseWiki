@@ -4,4 +4,4 @@ RoseStacker currently provides an internal PlaceholderAPI expansion that provide
 ## Placeholders
 | Placeholder | Description |
 | --- | --- |
-| `%rosestacker_spawner_silktouch_chance%` | The chance a player has to pick up a spawner using silk touch (eg. `40%`).  The output format can be configured in the locale file with the `silktouch-chance-placeholder` value. |
+| %rosestacker_spawner_silktouch_chance% | The chance a player has to pick up a spawner using silk touch (eg. `40%`).  The output format can be configured in the locale file with the `silktouch-chance-placeholder` value. |

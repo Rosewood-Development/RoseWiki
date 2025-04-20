@@ -15,3 +15,5 @@ There are two different uses for PlaceholderAPI in PlayerParticles. The first is
 | %playerparticles_particle_effect_<#>% | Gets the name of an effect of a player's active particle with an ID. Replace <#> with the desired ID. |
 | %playerparticles_particle_style_<#>% | Gets the name of a style of a player's active particle with an ID. Replace <#> with the desired ID. |
 | %playerparticles_particle_data_<#>% | Gets the data of a player's active particle with an ID. Replace <#> with the desired ID. |
+| %playerparticles_has_effect_<effect\>% | Checks if a player has a specific effect equipped. Replace <effect\> with the desired effect name. |
+| %playerparticles_has_style_<style\>% | Checks if a player has a specific style equipped. Replace <style\> with the desired style name. |
