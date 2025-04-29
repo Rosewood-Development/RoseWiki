@@ -167,7 +167,7 @@ town:
   # This option allows you to create several channels for different ranges of players.
   # TOWN - Sends messages to members of the same town.
   # NATION - Sends messages to members of the same nation.
-  channel-type: TEAM
+  channel-type: TOWN
   # Should allies be included in the message recipients?
   use-allies: true
   # If this is enabled, when a player joins a town they will automatically move into this channel.
