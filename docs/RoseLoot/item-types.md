@@ -272,18 +272,18 @@ pools:
     | Particle Data Type | Value Name | Valid Values | Description |
     | --- | --- | --- | --- |
     | **All** | `particle` | [Particle](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) | The type of particle to display |
-    |  | `amount` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | The amount of particles to display |
-    |  | `offset-x`, `offset-y`, `offset-z` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | The distance to randomly offset the particles between on each axis |
-    |  | `extra` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | An extra value normally used for particle random movement, does not work for all particle types |
+    |  | `amount` | [Number Provider](number-providers.md) | The amount of particles to display |
+    |  | `offset-x`, `offset-y`, `offset-z` | [Number Provider](number-providers.md) | The distance to randomly offset the particles between on each axis |
+    |  | `extra` | [Number Provider](number-providers.md) | An extra value normally used for particle random movement, does not work for all particle types |
     |  | `player-only` | `true` or `false` | If the particles should only be displayed to the player who caused the loot generation |
     |  | `long-distance` | `true` or `false` | If the particles should be visible from any distance.  Only applies if `player-only` is `false` |
-    | **DustOptions** | `red`, `green`, `blue` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) value between 0-255 | The display color values of the `REDSTONE` particles |
-    |  | `size` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | How large the particles should be displayed.  The normal `REDSTONE` particle size is 1 |
-    | **DustTransition** | All values from **DustOptions** plus `red-fade`, `green-fade`, and `blue-fade` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | The color values to fade `DUST_COLOR_TRANSITION` particles to |
+    | **DustOptions** | `red`, `green`, `blue` | [Number Provider](number-providers.md) value between 0-255 | The display color values of the `REDSTONE` particles |
+    |  | `size` | [Number Provider](number-providers.md) | How large the particles should be displayed.  The normal `REDSTONE` particle size is 1 |
+    | **DustTransition** | All values from **DustOptions** plus `red-fade`, `green-fade`, and `blue-fade` | [Number Provider](number-providers.md) | The color values to fade `DUST_COLOR_TRANSITION` particles to |
     | **ItemStack** and **BlockData** | `material` | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) | The item/block to display as the particle texture |
-    | **Vibration** | `time` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | How long to display the particles for |
-    | **Integer** | `delay` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | How many ticks to wait before the particle animation begins |
-    | **Float** | `rotation` | [Number Provider](https://github.com/Rosewood-Development/RoseLoot/wiki/Number-Providers) | A rotation (in radians) for the particle texture |
+    | **Vibration** | `time` | [Number Provider](number-providers.md) | How long to display the particles for |
+    | **Integer** | `delay` | [Number Provider](number-providers.md) | How many ticks to wait before the particle animation begins |
+    | **Float** | `rotation` | [Number Provider](number-providers.md) | A rotation (in radians) for the particle texture |
 
 ## Fireworks
 Fireworks can be spawned to show that rare or special loot has been dropped.  This follows the same format as [Firework Effect Meta](item-meta.md#firework-effect-meta) with a couple extra options.  `power` can be set to a value between -1 and 127, with a negative value making the firework explode instantly.  The firework can be set to not deal damage by setting `deal-damage: false`.
