@@ -37,6 +37,8 @@ Requires the [NBT API](https://www.spigotmc.org/resources/7939/) plugin to be in
 |  | `slimefun-inventory-contains` | `slimefun-inventory-contains:fortune_cookie,3` |
 | [Nexo](https://polymart.org/resource/nexo.6901) | `nexo-type` | `nexo-type:sapphire_pickaxe` |
 |  | `nexo-inventory-contains` | `nexo-inventory-contains:sapphire_pickaxe,1` |
+| [CrazyVouchers](https://modrinth.com/plugin/crazyvouchers) | `crazyvouchers-type` | `crazyvouchers-type:voucher_name` |
+|  | `crazyvouchers-inventory-contains` | `crazyvouchers-inventory-contains:voucher_name,1` |
 
 ## Natural Block Detection Plugins
 | Plugin | Condition | Description |

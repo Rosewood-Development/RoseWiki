@@ -430,3 +430,26 @@ pools:
             item: 'sapphire_pickaxe'
             amount: 1
 ```
+
+## [CrazyVouchers](https://modrinth.com/plugin/crazyvouchers)
+The item ID is the voucher name.
+
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'block-type:#diamond_ores'
+  - 'chance:0.1%'
+pools:
+  0:
+    conditions: []
+    entries:
+      0:
+        conditions: []
+        items:
+          0:
+            type: custom_item
+            plugin: crazyvouchers
+            item: 'your_voucher'
+            amount: 1
+```
