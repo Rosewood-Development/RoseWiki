@@ -45,7 +45,7 @@
     * Use Discord formatting like such as \*\***bold**\*\* and \*_italic_\* in-game<br/>
 ![Discord Formatting](https://user-images.githubusercontent.com/46502463/158841206-26f5afcf-3a15-4e73-b2e6-bc989e0c14d2.png)
 * Custom Emoji Support
-    * Support for using a [resource pack](https://github.com/Rosewood-Development/RoseChat/wiki/Resource-Packs) to add custom images, then display them in-chat or in RoseChat placeholders<br/>
+    * Support for using a [resource pack](resource-packs.md) to add custom images, then display them in-chat or in RoseChat placeholders<br/>
 ![Custom Emoji](https://user-images.githubusercontent.com/46502463/158841545-af65f802-bb05-4181-b48a-e782f606f784.png)
 * Core Shader Support
     * Support for using a resource pack to add core shaders, then display them in chat or in RoseChat placeholders<br/>
