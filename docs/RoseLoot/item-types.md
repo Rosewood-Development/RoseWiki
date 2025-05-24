@@ -497,3 +497,42 @@ pools:
             set: true
             value: 'log'
 ```
+
+## ServerVariables
+[ServerVariables](https://modrinth.com/plugin/servervariables) variables can be set, added to, reduced, or reset for either a player or globally.  `variable` is the name of the variable you want to modify.  `variable-type` can be set to `global` to modify a global variable or `player` to modify a player variable.  Specify the value type using `value-type`, this needs to be set to one of the following: `text`, `integer`, or `double`.  Specify the operation to apply to the variable by setting `value-operation`, set to one of the following: `set`, `add`, `reduce`, or `reset`.  If setting a text value, use `value`, for numerical values use `amount`.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'block-type:#logs'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0: # Using amount to add to an integer player variable between 1 and 3
+            type: server_variable
+            variable: woodcutting
+            variable-type: player
+            value-type: integer
+            value-operation: add
+            amount:
+              min: 1
+              max: 3
+          1: # Using amount to reduce a double global variable between 0 and 1
+            type: server_variable
+            variable: remaining_progress
+            variable-type: global
+            value-type: double
+            value-operation: reduce
+            amount:
+              min: 0
+              max: 1
+          2: # Using value to set a player variable to the last block type broken
+            type: score_variable
+            variable: last_broken_block
+            variable-type: player
+            value-type: text
+            value-operation: set
+            value: '%block_type%'
+```
