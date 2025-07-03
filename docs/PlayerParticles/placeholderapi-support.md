@@ -11,6 +11,7 @@ There are two different uses for PlaceholderAPI in PlayerParticles. The first is
 | %playerparticles_is_moving% | `true` or `false` based on if the player is moving or not. |
 | %playerparticles_is_in_combat% | `true` or `false` based on if the player is in combat or not. |
 | %playerparticles_is_in_allowed_region% | `true` or `false` based on if the player is in an allowed region or not. |
+| %playerparticles_is_in_limited_region% | `true` or `false` based on if the player is in a limited region or not. |
 | %playerparticles_can_see_particles% | `true` or `false` based on if the player has particle visibility toggled on or off. |
 | %playerparticles_particle_effect_<#>% | Gets the name of an effect of a player's active particle with an ID. Replace <#> with the desired ID. |
 | %playerparticles_particle_style_<#>% | Gets the name of a style of a player's active particle with an ID. Replace <#> with the desired ID. |

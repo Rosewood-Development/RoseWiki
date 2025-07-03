@@ -453,3 +453,25 @@ pools:
             item: 'your_voucher'
             amount: 1
 ```
+
+## [CraftEngine](https://modrinth.com/plugin/craftengine)
+The item ID is used as defined in the pack configuration files.
+
+```yaml
+type: BLOCK
+overwrite-existing: items
+conditions:
+  - 'craftengine-block:default:chinese_lantern'
+pools:
+  0:
+    conditions: []
+    entries:
+      0:
+        conditions: []
+        items:
+          0:
+            type: custom_item
+            plugin: craftengine
+            item: 'default:topaz'
+            amount: 1
+```

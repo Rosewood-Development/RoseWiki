@@ -39,6 +39,8 @@ Requires the [NBT API](https://www.spigotmc.org/resources/7939/) plugin to be in
 |  | `nexo-inventory-contains` | `nexo-inventory-contains:sapphire_pickaxe,1` |
 | [CrazyVouchers](https://modrinth.com/plugin/crazyvouchers) | `crazyvouchers-type` | `crazyvouchers-type:voucher_name` |
 |  | `crazyvouchers-inventory-contains` | `crazyvouchers-inventory-contains:voucher_name,1` |
+| [CraftEngine](https://modrinth.com/plugin/craftengine) | `craftengine-type` | `craftengine-type:default:topaz` |
+|  | `craftengine-inventory-contains` | `craftengine-inventory-contains:default:topaz,1` |
 
 ## Natural Block Detection Plugins
 | Plugin | Condition | Description |
@@ -52,9 +54,10 @@ Requires the [NBT API](https://www.spigotmc.org/resources/7939/) plugin to be in
 | [ItemsAdder](https://www.spigotmc.org/resources/73355/) | `itemsadder-block` | `itemsadder-block:ruby_ore` |
 | [Oraxen](https://www.spigotmc.org/resources/72448/) | `oraxen-block` | `oraxen-block:autumn_leaves` |
 | [Nexo](https://polymart.org/resource/6901) | `nexo-block` | `nexo-block:sapphire_ore` |
+| [CraftEngine](https://modrinth.com/plugin/craftengine) | `craftengine-block` | `craftengine-block:default:palm_leaves` |
 
 ## Custom Biome Plugin Compatibility
-If you are using a custom biomes plugin, the regular `biome` condition will not work.  You can use the special custom biome conditions below instead.
+If you are using a custom biomes plugin, the regular `biome` condition will not work (Note: This is no longer the case as of 1.21.3!).  You can use the special custom biome conditions below instead.
 
 | Plugin | Condition | Example |
 | --- | --- | --- |

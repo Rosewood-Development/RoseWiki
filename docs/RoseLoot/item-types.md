@@ -536,3 +536,24 @@ pools:
             value-operation: set
             value: '%block_type%'
 ```
+
+## zMenu PlayerData
+[zMenu](https://www.spigotmc.org/resources/110402/) player data can be set or added to.  `variable` is the name of the variable you want to modify.  Use `set: true` if you want to set the variable, otherwise it will add (negative numbers are supported).  If setting a text value, use `value`, for numerical values use `amount`.  Note that variables will not be updated if the loot generation was not caused by a player.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions: []
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0: # Using amount to track the number of blocks a player breaks
+            type: zmenu_playerdata
+            variable: blocks_broken
+            amount: 1
+          1: # Using set with text to track the last type of block a player broke using a loot context placeholder
+            type: zmenu_playerdata
+            variable: last_block_broken
+            value: '%block_type%'
+```
