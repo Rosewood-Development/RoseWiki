@@ -21,7 +21,7 @@
 ![PlaceholderAPI Placeholders](https://user-images.githubusercontent.com/46502463/158833118-20fbd662-dd90-47db-9147-33099c374473.png)
     * Supports RoseChat Placeholders<br/>
 ![RoseChat Placeholders](https://user-images.githubusercontent.com/46502463/158834078-c2fc3d40-b42e-4fdf-ba47-8457feb6ef4d.png)
-* Chat Replacements
+* Chat Replacements and Filters
     * Replace words in chat
     * Supports Regex Replacements and RoseChat Formatting<br/>
 ![Chat Replacements](https://user-images.githubusercontent.com/46502463/158837535-2829e7f1-7a13-4a4c-8197-45f4a67c7e50.png)
