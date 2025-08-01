@@ -75,60 +75,81 @@ The `shout` format is used with the `shout-commands` setting, and a message is s
 The `broadcast` format is used when a message is sent the channel from `/broadcast`.<br/>
 The `join-message` format is the message sent to a player when they join the channel.<br/>
 
-## replacements.yml
-The replacements file is used for replacing messages with other content. This can be used for fun, or to filter a message. For example, the default replacements file replaces `<3` with `❤️`. These are extremely configurable, and allow for things like emojis and tags.
+## Filters
+The filters folder allows organising multiple files with filters defined inside them.<br/>
+Filters can edit or block messages, such as blocking swear words, censoring them, or adding emojis and colours.<br/>
+The default file `colors.yml` defines tag-based colours like `<red>` to make text red, `fun.yml` defines some fun and useful features like emojis or `@Player` tags, and `swears.yml` shows how to block or censor a word.
 
-A replacement must first start with an ID and has two sections, `input` which contains settings for inputting a replacement, and `output` which contains settings for the output of a replacement. These can be seen as what the player types and what the player sees.
+A filter must first start with one or more `matches`, which tells the plugin what to search for in a message. They may optionally also contain a `replacement`, which tells the plugin what to replace the matched word with.
 
-This basic replacement replaces the input of `:example:` to `\uE000`, which will be an emoji.<br>
+This basic filter replaces the input of `:example:` to `\uE000`, which represents an emoji.<br/>
 The `can-toggle` setting allows the /toggleemoji command to be used, this allows players to not format specific replacements, like not converting `<3` to `❤️`.<br>
 These emojis can have icons when using a [Resource Pack](resource-packs.md).
 ```yaml
 example:
-  input:
-    text: ':example:'
-    can-toggle: true
-  output:
-    text: "\uE000"
+  matches:
+    - ":example:"
+  can-toggle: true
+  replacement: "\uE000"
 ```
 
-There are many configuration options for replacements.
+There are many configuration options for filters.
 ```yaml
 example:
-  input:
-    text: ':example:'
-    is-emoji: true
-  output:
-    text: "\uE000"
-    hover: '&b&o:rosewood:'
+  matches:
+    - ":example:"
+  can-toggle: true
+  hover: "&b&o:rosewood:"
+  replacement: "\uE000"
 ```
-The `hover` option allows a replacement to be hovered over.<br>
+The `hover` option allows a filter to be hovered over.<br>
 You can also use a custom placeholder here.
 ```yaml
-  output:
-    text: "{your-placeholder}"
+  replacement: "{your-placeholder}"
 ```
+
+There are two ways to use permissions in filters, a `use` permission and a `bypass` permission. 
+The player also needs `rosechat.filters.<location>` to send replacements in a specific location.<br>
+These are formatted like so:
+```yaml
+replaceable-words:
+  matches:
+    - 'crap'
+  replacement: 'cr*p'
+  permission:
+    bypass: "rosechat.admin"
+```
+This `bypass` permission ensures the filter will **not** be applied for that player.
+
+```yaml
+star:
+  matches:
+    - ':star:'
+  replacement: "✸"
+  permission:
+    use: rosechat.filter.star
+```
+This `use` permission ensures that the player must have this permission to use the filter.<br/>
 
 ```yaml
 rainbow:
-  input:
-    text: '&h'
-  output:
-    text: '<r:0.5>'
-    color-retention: true
+  matches:
+    - "&h"
+  replacement: "<r:0.5>"
+  color-retention: true
 ```
 The `color-retention` option allows the color specified in the output text to continue along the message.
 
 ```yaml
-regex-example-url:
-  input:
-    text: '(?:http(?:s){0,1}://){0,1}[-a-zA-Z0-9@:%._\+~#=]{2,32}\.[a-zA-Z0-9()]{2,16}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
-    is-regex: true
-  output:
-    text: '{url}'
+regex-url:
+  # Regex matches can also be used.
+  matches:
+    - '(?:http(?:s){0,1}://){0,1}[-a-zA-Z0-9@:%._\+~#=]{2,32}\.[a-zA-Z0-9()]{2,16}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
+  use-regex: true
+  replacement: "{url}"
 ```
-The `is-regex` option allows the `text` value to be seen as regex, and replacements will be matched against it.<br>
-For replacements that use regex, there are placeholders for regex groups. These can be used in linked custom placeholders, or in the `text` option itself.<br>
+The `use-regex` option allows the `text` value to be seen as regex, and replacements will be matched against it.<br>
+For filters that use regex, there are placeholders for regex groups. These can be used in linked custom placeholders, or in the `text` option itself.<br>
 ```yaml
 spoiler-tag:
   text:
@@ -137,22 +158,20 @@ spoiler-tag:
     default:
       - "%input_1%"
 ```
-This replacement uses `%input_1%` to get the text inside the spoiler tags. These can also be used in inline replacements.<br>
+This filter uses `%input_1%` to get the text inside the spoiler tags. These can also be used in inline .<br>
 The `input` placeholder allows grabbing a regex group while also checking a player's permission. Using `%group_1%` would return the first group and also parse the message without checking permissions, applying colours even if the player does not have permission to use colours in chat.
 
-### Prefixed Replacements
+### Prefixed Filters
 
 ```yaml
 spoiler:
-  input:
-    prefix: '<spoiler>'
-    suffix: '</spoiler>'
-  output:
-    text: '{spoiler-tag}'
-    match-length: true
+  prefix: "<spoiler>"
+  suffix: "</spoiler>"
+  replacement: "{spoiler-tag}"
+  match-length: true
 ```
 
-Replacements can also have `prefix` and `suffix`. This example will match this text: `<spoiler>Hello</spoiler>` and replace it with the custom placeholder `{spoiler-tag}`.<br>
+Filters can also have a `prefix` and a `suffix`. This example will match this text: `<spoiler>Hello</spoiler>` and replace it with the custom placeholder `{spoiler-tag}`.<br>
 The `match-length` option is useful as the `{spoiler-tag}` setting contains one character, `match-length` will repeat this character 5 times as `Hello` has 5 characters.<br>
 `prefix` and `suffix` can also contain regex if `is-regex` is enabled.
 
@@ -166,25 +185,24 @@ player:
     tag-online-players: true
     sound: minecraft:block.note_block.pling
 ```
-Replacements can also have only a `prefix` option. This example will look for words starting with `@` and replace them with the output text.<br>
+Filters can also have only a `prefix` option. This example will look for words starting with `@` and replace them with the output text.<br>
 The `stop` setting is a regex string, telling the plugin where to stop looking after it finds the prefix. This example searches for `@player` and stops when it finds punctuation or a space.<br>
 The output option `tag-online-players` highlights the player's name, and sends them a sound, specified in the `sound` option.
 
-### Inline Replacements
+### Inline Filters
 
 ```yaml
 url:
-  input:
-    prefix: '['
-    suffix: ']'
-    text: '(?:http(?:s){0,1}://){0,1}[-a-zA-Z0-9@:%._\+~#=]{2,32}\.[a-zA-Z0-9()]{2,16}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
-    inline-prefix: '('
-    inline-suffix: ')'
-    is-inline-regex: true
-  output:
-    text: '{url}'
+  prefix: '['
+  suffix: ']'
+  inline-matches:
+    - '(?:http(?:s){0,1}://){0,1}[-a-zA-Z0-9@:%._\+~#=]{2,32}\.[a-zA-Z0-9()]{2,16}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
+  use-regex: true
+  inline-prefix: '('
+  inline-suffix: ')'
+  replacement: "{url}"
 ```
-This replacement converts `[Click Here](www.example.com)` to `Click Here`, with the link `www.example.com`. <br>
+This filter converts `[Click Here](www.example.com)` to `Click Here`, with the link `www.example.com`. <br>
 The `prefix` and `suffix` values define the prefix and suffix for the content, `Click Here`.<br>
 The `inline-prefix` and `inline-suffix` values define the prefix and suffix for the inline, `www.example.com`<br>
 These can be used without regex, and without the `text` value to allow players to create their own hoverable messages. For example, `[Hover Me!](Hello)`, when configured, will create a message saying "Hover Me", and the hover says "Hello".<br>
@@ -194,40 +212,27 @@ You can also use `is-content-regex` to match text between the `prefix` and `suff
 
 The `discord-output` option, requiring DiscordSRV, allows the output to be different if sent to Discord.
 ```yaml
-example:
-  input:
-    text: ':example:'
-  output:
-    text: "\uE000"
-    discord-output: ":smile:"
+  discord-output: ":smile:"
 ```
 
-By default, the permission to use a replacement is `rosechat.replacement.<id>`. The player also needs `rosechat.replacements.<location>` to send replacements in a specific location.<br>
-This can be changed using the `permission` option:
+### Swear Filters
+You may want to stop players from sending messages with bad words in them.
+The `block` option stops a message from being sent.
 ```yaml
-example:
-  input:
-    text: ':example:'
-    permission: 'your.permission'
-  output:
-    text: "\uE000"
+bannable-words:
+  matches:
+    - damn
+  sensitivity: 20
+  block: true
+  commands:
+    server:
+      - warn %player% Swearing
 ```
-
-## colors.yml
-The colors file serves as an extra space to add replacements that are specifically custom colors. These have `color-retention` enabled by default.
-By default, this file allows players used to MiniMessage formats to use colors in RoseChat.
-
-This is an example of a basic color.
-```yaml
-red:
-  input:
-    text: "<red>"
-    has-closing-tag: true
-  output:
-    text: "&c"
-```
-
-The format is the same as a replacement, the player can type `<red>` and it is replaced by the `&c` color code. The `has-closing-tag` option allows the plugin to automatically create a closing tag version of the replacement. This means that the above color will also be available by typing `<red>your text</red>`, allowing for non-colored text the be placed outside of the tags.
+The default `bannable-words` filter in `swears.yml` blocks the message being sent if it finds "damn", it then also runs a command on the server to warn the player.<br>
+The `sensitivity` option provides an easy way to filter similar words without having to type them all. This filter will catch `damn`, `dámn` and other variations.
+A filter with a sensitivity that is too high may catch incorrect words, like `dam`, in this instance, the sensitivity can be lowered or removed entirely. 
+There may be some instances where creating a second filter with a different sensitivity value may be more useful than editing the sensitivity of one.<br>
+These options may also be used in other filters.
 
 ## custom-placeholders.yml
 The placeholders file is used to define placeholders that RoseChat uses. This is probably the most useful file. 

@@ -7,18 +7,21 @@ There are a few variations of this function:<br><br>
 
 This method simply parses the message.
 ```java
-BaseComponent[] parse(RosePlayer sender, RosePlayer viewer, String message)
+MessageContents parse(RosePlayer sender, RosePlayer viewer, String message)
 ```
 
 This method allows you to use placeholders in the message.
 ```java
-BaseComponent[] parse(RosePlayer sender, RosePlayer viewer, String message, StringPlaceholders placeholders)
+MessageContents parse(RosePlayer sender, RosePlayer viewer, String message, StringPlaceholders placeholders)
 ```
 
-This method allows using a [MessageLocation](https://github.com/Rosewood-Development/RoseChat/blob/master/src/main/java/dev/rosewood/rosechat/message/MessageLocation.java) to check for permissions.
+This method allows using a [PermissionArea](https://github.com/Rosewood-Development/RoseChat/blob/master/src/main/java/dev/rosewood/rosechat/message/PermissionArea.java) to check for permissions.
 ```java
-BaseComponent[] parse(RosePlayer sender, RosePlayerviewer, String message, MessageLocation location)
+MessageContents parse(RosePlayer sender, RosePlayerviewer, String message, MessageLocation location)
 ```
+<br>
+The [MessageContents](https://github.com/Rosewood-Development/RoseChat/blob/master/src/main/java/dev/rosewood/rosechat/message/contents/MessageContents.java) class provides an abstracted way to handle the output of a message, abstracted from whichever platform you are using.
+ 
 
 #### RosePlayer
 The [RosePlayer](https://github.com/Rosewood-Development/RoseChat/blob/master/src/main/java/dev/rosewood/rosechat/message/RosePlayer.java) object is used by RoseChat to give more information to a Player object. When you need to use a RosePlayer, you can just create a `new RosePlayer()`. This object has a few different constructors, but passing a Player object through is the most common.
@@ -31,8 +34,9 @@ public void onPlayerJoin(PlayerJoinEvent event) {
     Player player = event.getPlayer();
     RosePlayer rosePlayer = new RosePlayer(player);
 
-    BaseComponent[] message = rosechat.parse(rosePlayer, rosePlayer, "<r:0.5>Hi %player_name% &r:rosewood:");
-    Bukkit.spigot().broadcast(message);
+    MessageContents message = rosechat.parse(rosePlayer, rosePlayer, "<r:0.5>Hi %player_name% &r:rosewood:");
+    BaseComponent[] components = message.buildComponents();
+    Bukkit.spigot().broadcast(components);
 }
 ```
 
@@ -45,27 +49,26 @@ Creating a new `RoseMessage` object for each player allows each player to receiv
 #### Rose Messages
 The preferred way to send a message to multiple players is by using `RoseMessage.forChannel(RosePlayer, Channel)` or `RoseMessage.forLocation(RosePlayer, MessageLocation).<br>
 
-An example of this is used in the RoseChatChannel class:
+An simple example of this can be seen below:
 ```java
+	
+RoseMessage message = RoseMessage.forChannel(sender, this);
+MessageRules rules = new MessageRules().applyAllFilters();
+MessageRules.RuleOutputs outputs = rules.apply(message, input);
 
-        RoseMessage roseMessage = RoseMessage.forChannel(sender, this);
+// Check if the message is allowed to be sent.
+if (outputs.isBlocked()) {
+	if (outputs.getWarning() != null)
+		outputs.getWarning().send(sender);
+	return;
+}
 
-        // Create the rules for this message.
-        MessageRules rules = new MessageRules().applyAllFilters();
-        MessageRules.RuleOutputs outputs = rules.apply(roseMessage, message);
+roseMessage.setPlayerInput(outputs.getFilteredMessage());
 
-        // Check if the message is allowed to be sent.
-        if (outputs.isBlocked()) {
-            if (outputs.getWarning() != null)
-                outputs.getWarning().send(sender);
-            return;
-        }
+MessageContents contents = message.parse(receiver, format);
 
-        roseMessage.setPlayerInput(outputs.getFilteredMessage());
-
-        MessageTokenizerResults<BaseComponent[]> components = roseMessage.parse(receiver, format);
-        MessageOutputs messageOutputs = components.outputs();
-
+// Sending the message to a player:
+receiver.send(contents);
 ```
 
 This creates a new `MessageRules` object, which defines the rules of the message, and if a message should be filtered based on the permissions of the sender. It also applies the sender's chat colour.<br>
@@ -80,34 +83,34 @@ A format is not needed, and `null` can be passed.<br>
 There are several `parse` functions in the `RoseMessage` class.<br>
 The first simply parses the message as it should be seen in-game.
 ```java
-BaseComponent[] parse(RosePlayer viewer, String format)
+MessageContents parse(RosePlayer viewer, String format)
 ```
 
 The second treats the message as if it was sent from Discord, converting Discord formatting to Minecraft. A discord id can be passed to allow messages to be deleted in Discord.
 ```java
-BaseComponent[] parseMessageFromDiscord(RosePlayer viewer, String format, String discordId)
+MessageContents parseMessageFromDiscord(RosePlayer viewer, String format, String discordId)
 ```
 
 The third treats the message as if it was sent to Discord, converting Minecraft formatting to Discord.
 ```java
-BaseComponent[] parseMessageToDiscord(RosePlayer viewer, String format)
+MessageContents parseMessageToDiscord(RosePlayer viewer, String format)
 ```
 
 The fourth treats the message as if it was going to be sent to a Bungee server.
 ```java
-BaseComponent[] parseBungeeMessage(RosePlayer viewer, String format)
+MessageContents parseBungeeMessage(RosePlayer viewer, String format)
 ```
 
-The final method allows a MessageParser to be specified, and a discord id too, if needed..
+The final method allows a MessageParser to be specified, and a discord id too, if needed.
 ```java
-BaseComponent[] parse(MessageParser parser, RosePlayer viewer, String format, String discordId)
+MessageContents parse(MessageParser parser, RosePlayer viewer, String format, String discordId)
 ```
 
 Now that the message is parsed, functions such as `getTaggedPlayers()` becomes available to use from the MessageOuputs class.
 
 ### Message Parsers
 A message parser is a way of deciding what to do with a message when it is parsed.<br>
-Typically, this consists of combining multiple [tokenizers]() to create a final message.<br>
+Typically, this consists of combining multiple [tokenizers](tokens-%26-tokenizers.md) to create a final message.<br>
 An example of a MessageParser can be seen [here](https://github.com/Rosewood-Development/RoseChat/blob/master/src/main/java/dev/rosewood/rosechat/message/parser/RoseChatParser.java).<br>
 This MessageParser mainly decides what tokenizers to use for the message.<br>
 A MessageParser is simply called when the message is parsed, so anything can be done to the message.
