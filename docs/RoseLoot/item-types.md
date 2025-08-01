@@ -383,7 +383,97 @@ pools:
           2:
             type: message
             message-type: chat
-            value: '&6While mining, you find %random_number_coins_int%' coins!'
+            value: '&6While mining, you find %random_number_coins_int% coins!'
+```
+
+## Delay
+Delay dropping loot items by a number of ticks.  `value` defaults to 1 which will run in the next tick.  `items` is the list of loot items to drop.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'chance:0.01%'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0:
+            type: delay
+            value: 60 # Drop 3 seconds later
+            items:
+              0:
+                type: item
+                item: diamond
+                amount: 1
+```
+
+## Set Block
+Allows setting a block to a different type relative to either the looter or the loot origin.  `block` is the BlockData to set the block to, supports optional square brackets `[]` to set specific states.  `x`, `y`, and `z` are used as optional offsets from the relative location.  The `relative-to` value can be set to `looter` to set relative to the looter, or `looted` to be set relative to the looted location.  Finally, `replace` can be set to `true` to replace the block at the location instead of dropping its items.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'chance:1%'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0:
+            type: set_block
+            block: 'redstone_lamp[lit=true]'
+            relative-to: looter
+            x: 0
+            y: -1
+            z: 0
+            replace: false
+```
+
+## Break Block
+Allows breaking a block.  `break-as-looter` can be set to `true` to break the block as the player using their current tool.  `replace` can be set to `true` to remove the block without dropping any items.  `trigger-effects` can be set to `true` to play the block break sound and particles, always enabled on Spigot. `x`, `y`, and `z` are used as optional offsets from the relative location.  The `relative-to` value can be set to `looter` to set relative to the looter, or `looted` to be set relative to the looted location.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'chance:1%'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0:
+            type: break_block
+            break-as-looter: true
+            relative-to: looted
+            x: 0
+            y: -1
+            z: 0
+            replace: false
+```
+
+## Spawn Entity
+Allows spawning an entity.  `entity` is the type of entity to spawn, supports an NBT string surrounded in `{}` to spawn an entity with specific NBT.  `x`, `y`, and `z` are used as optional offsets from the relative location.  The `relative-to` value can be set to `looter` to spawn relative to the looter, or `looted` to be spawn relative to the looted location.  `copy-looted` can be set to `true` to spawn a copy of the entity that was looted.
+```yaml
+type: ENTITY
+overwrite-existing: none
+conditions:
+  - 'entity-type:zombie'
+  - 'chance:1%'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0:
+            type: spawn_entity
+            entity: zombie
+            # entity: '{id:chicken,Passengers:[{id:zombie,IsBaby:1}]}'
+            relative-to: looted
+            x: 0
+            y: 0
+            z: 0
+            copy-looted: false
 ```
 
 ## Discord Webhook
