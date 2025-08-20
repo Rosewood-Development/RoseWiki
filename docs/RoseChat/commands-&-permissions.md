@@ -55,7 +55,7 @@ This page contains all of the commands and permissions for RoseChat.  Scroll pas
 | `/realname`     | Allows a viewing the realname of a player.               | rosechat.realname      |
 | `/broadcast`    | Broadcasts a message to the server or specific channel. Placeholders can be freely used in broadcasts. | rosechat.broadcast |
 | `/emoji`        | Allows users to view and test their emojis by sending a message to themselves. | rosechat.emoji |
-| `/ping`         | Replies back to a player with what they sent, including emojis, replacements, and placeholders. | rosechat.ping |
+| `/ping`         | Replies back to a player with what they sent, including emojis, filters, and placeholders. | rosechat.ping |
 |                   | Required for players to click the delete message button. | rosechat.deletemessage |
 |                   | Allows players to delete messages sent from the server to the player. <br/> For example, `<player> has joined the server`. | rosechat.deletemessages.client |
 |                   | Allows players to delete their own messages. | rosechat.deletemessages.self |
@@ -83,13 +83,14 @@ This page contains all of the commands and permissions for RoseChat.  Scroll pas
 |                   | Allows using the `> quote` markdown in different locations. | rosechat.quote.channel.<channel\> <br/> rosechat.quote.group <br/> rosechat.quote.message <br/> rosechat.quote.nickname |
 |                   | Allows using placeholders in different locations. <br/> A specific placeholder permission is also required. | rosechat.placeholders.channel.<channel\> <br/> rosechat.placeholders.group <br/> rosechat.placeholders.message <br/> rosechat.placeholders.nickname |
 |                   | Allows using a specific placeholder. <br/> Example Permissions for PlaceholderAPI: `rosechat.placeholders.player.name` for `%player_name%` or `rosechat.placeholders.server.maxplayers` for `%server_max_players%`. <br/> Example Permission for RoseChat Placeholders: `rosechat.placeholders.rosechat.player` for `{player}`. | rosechat.placeholder.<placeholder\> |
-|                   | Allows using replacements in different locations. <br/> A specific replacement permission is also required. | rosechat.replacements.channel.<channel\> <br/> rosechat.replacements.group <br/> rosechat.replacements.message <br/> rosechat.replacements.nickname |
-|                   | Allows using a specific replacement. <br/> Example Permission: `rosechat.replacement.regex-example`. | rosechat.replacement.<replacement\> |
+|                   | Allows using filters in different locations. <br/> A specific filter permission is also required. | rosechat.filters.channel.<channel\> <br/> rosechat.filters.group <br/> rosechat.filters.message <br/> rosechat.filters.nickname |
+|                   | Allows using a specific filter. <br/> Example Permission: `rosechat.filter.regex-example`. | rosechat.filter.<filter\> |
 |                   | Allows using emojis in different locations. <br/> A specific emoji permission is also required. | rosechat.emojis.channel.<channel\> <br/> rosechat.emojis.group <br/> rosechat.emojis.message <br/> rosechat.emojis.nickname |
 |                   | Allows using a specific emoji. <br/> Example Permission: `rosechat.emoji.rosewood`. | rosechat.emoji.<emoji\> |
-|                   | Allows using a specific color in chat. <br/>Requires `use-per-color-permissions` in `config.yml` to be enabled. <br/>A full list of colors can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/ChatColor.html<br/> Example Permissions:<br> `rosechat.red.channel.global` - Allows using red in the global channel.<br>`rosechat.red.chatcolor` - Allows using /chatcolor &c<br>`rosechat.color.channel.global` - Allows using colours in the global channel.<br>`rosechat.color.chatcolor` - Allows using colours in /chatcolor. | rosechat.<color\>.<location\> |
-|                   | Allows using the [item] replacement.                     | rosechat.helditem.channel.<channel\>      |
-| | Allows seeing messages sent by players that were blocked by the plugin.<br>For example, messages containing blocked words. | rosechat.seeblocked |
+|                   | Allows using a specific color in chat. <br/>Requires `use-per-color-permissions` in `config.yml` to be enabled. <br/>A full list of colors can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/ChatColor.html<br/> Example Permissions:<br> `rosechat.red.channel.global` - Allows using red in the global channel.<br>`rosechat.red.chatcolor` - Allows using /chatcolor &c<br>`rosechat.color.channel.global` - Allows using colors in the global channel.<br>`rosechat.color.chatcolor` - Allows using colors in /chatcolor. | rosechat.<color\>.<location\> |
+|                   | Allows using the [item] filter.                     | rosechat.helditem.channel.<channel\>      |
+| 					| Allows seeing messages sent by players that were blocked by the plugin.<br>For example, messages containing blocked words. | rosechat.seeblocked |
+|					| Allows using \\ to stop formatting any colors, filters, or placeholder.<br>Filters require the `escapable` setting enabled.	| rosechat.escape |
 
 ## How do I use this?
 
