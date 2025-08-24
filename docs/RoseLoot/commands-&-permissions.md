@@ -10,6 +10,8 @@ This page contains all of the commands and permissions for RoseLoot.  Scroll pas
 | `/loot generate <lootTable> [player] [silent]` | Runs a loot table for a player and drops the loot on top of them.  If a player is not provided, will use the player who executed the command.  Silent can be set to true to avoid printing a message to the player given the loot. | roseloot.generate |
 | `/loot giveitems <lootTable> [player] [silent]` | Gives all items in a loot table to a player and drops the loot on top of them.  If a player is not provided, will use the player who executed the command.  Silent can be set to true to avoid printing a message to the player given the loot. | roseloot.giveitems |
 | `/loot copy [true|false]` | Creates a config entry of the player's held item to copy and paste into a loot table.  Boolean can be true to copy the NBT of the item; [NBT API](https://www.spigotmc.org/resources/7939/) plugin required. | roseloot.copy |
+| `/loot copycomponents` | Creates a config entry of the player's held item using components to copy and paste into a loot table.  Only available in 1.21.3+. | roseloot.copycomponents |
+| `/loot spawn <lootTable> <world> <x> <y> <z> [player]` | Runs a loot table, optionally for a player, and drops the loot at the given location. | roseloot.spawn |
 
 ## How do I use this?
 ### Permission Usage
