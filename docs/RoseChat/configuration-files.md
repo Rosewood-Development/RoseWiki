@@ -101,8 +101,10 @@ example:
   can-toggle: true
   hover: "&b&o:rosewood:"
   replacement: "\uE000"
+  escapable: true
 ```
 The `hover` option allows a filter to be hovered over.<br>
+The `escapable` option allows typing `\:example:` to prevent the filter from being used. The permission `rosechat.escape` is required.<br><br>
 You can also use a custom placeholder here.
 ```yaml
   replacement: "{your-placeholder}"
