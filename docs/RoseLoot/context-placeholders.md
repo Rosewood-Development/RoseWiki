@@ -20,6 +20,7 @@ These placeholders will always be available and do not require any special condi
 | `%player%` | That player that caused the loot to be generated | A player must have caused the loot to generate |
 | `%entity_type%` | The entity type that was looted | An entity must have been looted |
 | `%entity_name%` | The name of the entity that was looted | An entity must have been looted |
+| `%entity_name_unformatted%` | The name of the entity that was looted but with text formatting removed | An entity must have been looted |
 | `%block_type%` | The block type that was looted | A block must have been looted |
 | `%item_type%` | The item used to loot | The looting entity must be holding an item |
 | `%vanilla_loot_table_name%` | The vanilla loot table name | The loot type must be a container that is generating for a vanilla loot table |
