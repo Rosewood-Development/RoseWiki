@@ -15,6 +15,7 @@ nav:
     - Items:
       - Item Types: RoseLoot/item-types.md
       - Item Meta: RoseLoot/item-meta.md
+      - Item Components: RoseLoot/item-components.md
       - Custom Item Plugins: RoseLoot/custom-item-plugins.md
       - Context Placeholders: RoseLoot/context-placeholders.md
     - API Usage:
