@@ -49,12 +49,13 @@ Requires the [NBT API](https://www.spigotmc.org/resources/7939/) plugin to be in
 | [CoreProtect](https://www.spigotmc.org/resources/8631/) | `coreprotect-natural-block` | Not recommended, can make database queries on the main thread and cause lag spikes |
 
 ## Custom Blocks Plugin Compatibility
-| Plugin | Condition | Example |
-| --- | --- | --- |
-| [ItemsAdder](https://www.spigotmc.org/resources/73355/) | `itemsadder-block` | `itemsadder-block:ruby_ore` |
-| [Oraxen](https://www.spigotmc.org/resources/72448/) | `oraxen-block` | `oraxen-block:autumn_leaves` |
-| [Nexo](https://polymart.org/resource/6901) | `nexo-block` | `nexo-block:sapphire_ore` |
-| [CraftEngine](https://modrinth.com/plugin/craftengine) | `craftengine-block` | `craftengine-block:default:palm_leaves` |
+| Plugin | Condition | Description | Example |
+| --- | --- | --- | --- |
+| [ItemsAdder](https://www.spigotmc.org/resources/73355/) | `itemsadder-block` | Check if a block is an ItemsAdder block | `itemsadder-block:ruby_ore` |
+| [Oraxen](https://www.spigotmc.org/resources/72448/) | `oraxen-block` | Check if a block is an Oraxen block |`oraxen-block:autumn_leaves` |
+| [Nexo](https://polymart.org/resource/6901) | `nexo-block` | Check if a block is a Nexo block |`nexo-block:sapphire_ore` |
+| [CraftEngine](https://modrinth.com/plugin/craftengine) | `craftengine-block` | Check if a block is a CraftEngine block |`craftengine-block:default:palm_leaves` |
+|   | `craftengine-block-data` | Check if a CraftEngine block has specific block data (works the same as the block-data condition) |`craftengine-block-data:age=3` |
 
 ## Custom Biome Plugin Compatibility
 If you are using a custom biomes plugin, the regular `biome` condition will not work (Note: This is no longer the case as of 1.21.3!).  You can use the special custom biome conditions below instead.
