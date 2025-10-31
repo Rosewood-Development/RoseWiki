@@ -525,7 +525,7 @@ pools:
 ```
 
 ## MMOCore Experience
-[MMOCore](https://www.spigotmc.org/resources/70575/) experience can be granted to a player for either a profession's experience or global experience. The `profession` value is optional and will apply globally if not provided.
+[MMOCore](https://www.spigotmc.org/resources/70575/) experience can be granted to a player for either a profession's experience or global experience.  The `profession` value is optional and will apply globally if not provided.
 ```yaml
 type: BLOCK
 overwrite-existing: none
@@ -542,8 +542,27 @@ pools:
             amount: 1
 ```
 
+## AuraSkills Experience
+[AuraSkills](https://modrinth.com/plugin/auraskills) experience can be granted to a player for a skill.  Experience can be given raw to ignore any XP multipliers by setting `raw: true`.
+```yaml
+type: BLOCK
+overwrite-existing: none
+conditions:
+  - 'block-type:#logs'
+pools:
+  0:
+    entries:
+      0:
+        items:
+          0:
+            type: auraskills_experience
+            skill: foraging
+            raw: false
+            amount: 1
+```
+
 ## EcoSkills Experience
-[EcoSkills](https://www.spigotmc.org/resources/95541/) experience can be granted to a player for a skill.  Experience is given naturally by default, it can be changed to be given directly by setting `give-naturally: false`. 
+[EcoSkills](https://www.spigotmc.org/resources/95541/) experience can be granted to a player for a skill.  Experience is given naturally by default, it can be changed to be given directly by setting `natural: false`. 
 ```yaml
 type: BLOCK
 overwrite-existing: none
@@ -557,7 +576,7 @@ pools:
           0:
             type: ecoskills_experience
             skill: woodcutting
-            give-naturally: true
+            natural: true
             amount: 1
 ```
 
