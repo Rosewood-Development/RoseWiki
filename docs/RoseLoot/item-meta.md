@@ -97,6 +97,30 @@ pools:
 ```
 You can find a list of all enchantments [here](https://www.digminecraft.com/lists/enchantment_list_pc.php).
 
+#### Remove Enchantments
+If you want to make certain enchantments not allowed on an item, you can specify them under the `remove-enchantments` list.  For enchanted books, this will turn the item into a regular book if there are no remaining enchantments.
+```yaml
+type: ENTITY
+overwrite-existing: none
+conditions:
+  - 'entity-type:villager'
+pools:
+  0:
+    conditions: []
+    entries:
+      0:
+        conditions: []
+        items:
+          0:
+            type: item
+            item: book
+            enchant-randomly:
+              level: 30
+              treasure: true
+            remove-enchantments:
+              - mending
+```
+
 #### Enchantment Bonus
 If you want to increase the number of a specific item that can drop when using an enchantment such as looting, you can do that with this section.
 ```yaml
