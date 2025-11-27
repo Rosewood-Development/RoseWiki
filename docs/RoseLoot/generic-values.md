@@ -16,7 +16,7 @@ Conditions can be inverted by adding a `!` at the beginning like so: `!condition
 #### Advanced Formatting
 The above properties can all be combined with the use of parenthesis `()`.  Here is an advanced example that checks if the player is using any tool other than shears or one with silk touch: `!(required-tool-type:shears || enchantment:silk_touch)`.  Any whitespace used in conditions is purely decorative.
 
-For the `condition-chance` condition, if you wish to use `&&`, `||`, `()`, or `!` you will need to surround the condition in `{}`, such as `condition-chance:1%,{biome:desert||block:sand},10%`.  Specifically, the `{}` means anything within will be parsed separately from the current condition. 
+For the `condition-chance` condition, if you wish to use `&&`, `||`, `()`, or `!` you will need to surround the condition in `{}`, such as `condition-chance:1%,{biome:desert||block-type:sand},10%`.  Specifically, the `{}` means anything within will be parsed separately from the current condition. 
 
 ## Values
 
