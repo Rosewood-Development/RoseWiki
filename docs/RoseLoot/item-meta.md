@@ -74,7 +74,7 @@ pools:
 ```
 
 #### Enchantments
-If you don't want random enchantments, you can specify the exact enchantments you want instead.
+If you want specific enchantment levels, you can specify the exact enchantments you want instead, allowing unsafe enchantment levels.  Note that this does not check for incompatible enchantments for the item or conflicting enchantments.  To only apply a certain number of enchantments, you can set the `enchantments-amount` setting to something higher than 1, this value is optional and if not provided will apply all enchantments listed.
 ```yaml
 type: ENTITY
 overwrite-existing: none
@@ -94,6 +94,10 @@ pools:
             enchantments:
               sharpness: 5
               looting: 3
+              knockback:
+                min: 1
+                max: 10
+            enchantments-amount: 2
 ```
 You can find a list of all enchantments [here](https://www.digminecraft.com/lists/enchantment_list_pc.php).
 
