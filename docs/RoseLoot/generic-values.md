@@ -71,6 +71,7 @@ For the `condition-chance` condition, if you wish to use `&&`, `||`, `()`, or `!
 | `required-tool` | The tool type and quality required | ALL | First value is required and one of the following: `shovel`, `pickaxe`, `axe`, `hoe`, `sword`, or `shears`. Second value is optional and one of the following: `wood`, `stone`, `gold`, `iron`, `diamond`, or `netherite` | `required-tool:pickaxe,stone` |
 | `required-tool-type` | The tool type must match | ALL | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) or [Tags](https://minecraft.wiki/w/Tag#List_of_tags), requires 1 or more | `required-tool-type:bow,apple,golden_pickaxe` |
 | `replaced-block-type` | Used for checking if a block broke another block, like water flowing over crops | BLOCK | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) or [Tags](https://minecraft.wiki/w/Tag#List_of_tags), requires 1 or more | `replaced-block-type:water` |
+| `scoreboard-tag` | Checks if an entity has a scoreboard tag added by the vanilla /tag command | ENTITY, ENTITY_DROP_ITEM, PIGLIN_BARTER | Requires 1 or more tag name | `scoreboard-tag:diamond_chicken` |
 | `sitting` | Animal must be sitting, applies to tamed animals | ENTITY | None | `sitting` |
 | `sleeping` | Entity must be sleeping, mainly applies to players, villagers, and foxes | ENTITY | None | `sleeping` |
 | `sneaking` | Player must be sneaking | ALL | None | `sneaking` |
