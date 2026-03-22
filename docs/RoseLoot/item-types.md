@@ -184,7 +184,7 @@ pools:
 ```
 
 ## Economy
-Want to reward players with money for killing mobs or mining blocks?  Supported economy types are currently `vault`, `treasury`, `playerpoints`, and `tokenmanager`, and `coinsengine`.  For economy plugins that support multiple currencies, provide the currency with the property `currency: coins` for example.  If you would like direct support for another economy plugin, please request it in our Discord server.
+Want to reward players with money for killing mobs or mining blocks?  Supported economy types are currently `vault`, `treasury`, `playerpoints`, `tokenmanager`, and `excellenteconomy`.  For economy plugins that support multiple currencies, provide the currency with the property `currency: coins` for example.  If you would like direct support for another economy plugin, please request it in our Discord server.
 ```yaml
 type: ENTITY
 overwrite-existing: none
