@@ -14,3 +14,6 @@ There are two different uses for PlaceholderAPI in PlayerPoints. The first is us
 | %playerpoints_leaderboard_<#>_amount_shorthand% | The amount of points of the player at the given leaderboard position, formatted in shorthand notation |
 | %playerpoints_leaderboard_position% | The leaderboard position that the player is at |
 | %playerpoints_leaderboard_position_formatted% | The leaderboard position that the player is at, formatted |
+| %playerpoints_points_for_<player\>% | The number of points that a specific player has (eg. 1337) |
+| %playerpoints_points_formatted_for_<player\>% | The number of points that a specific player has with number separators (eg. 1,337) |
+| %playerpoints_points_shorthand_for_<player\>% | The number of points that a specific player has in shorthand notation (eg. 1.3k) |
