@@ -6,6 +6,7 @@ You can check for conditions that are specific to certain entities.  These condi
 | Entity Type | Condition | Description | Values | Example |
 | --- | --- | --- | --- | --- |
 | **Allay** |  |  |  |  |
+| **Armadillo** |  |  |  |  | 
 | **Axolotl** | `axolotl-playing-dead` | Axolotl must be playing dead | None | `axolotl-playing-dead` |
 |  | `axolotl-variant` | Axolotl must be a specific variant | [Axolotl Variant](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Axolotl.Variant.html), requires 1 or more | `axolotl-variant:blue` |
 | **Bat** | `bat-sleeping` | Bat must be asleep hanging on a block | None | `bat-sleeping` |
@@ -14,16 +15,20 @@ You can check for conditions that are specific to certain entities.  These condi
 |  | `bee-has-stung` | Bee must be suffering the loss of its stinger | None | `bee-has-stung` |
 |  | `bee-has-flower` | Bee must be *bee*-lining towards a flower or actively pollinating it | None | `bee-has-flower` |
 |  | `bee-has-nectar` | Bee must be happily covered in pollen | None | `bee-has-nectar` |
-| **Bogged** | `bogged-sheared` | Bogged must be sheared | None | `bogged-sheared` |
 | **Blaze** |  |  |  |  |
+| **Bogged** | `bogged-sheared` | Bogged must be sheared | None | `bogged-sheared` |
 | **Breeze** | | | | |
 | **Camel** | `camel-dashing` | Camel must be dashing | None | `camel-dashing` |
+| **Camel Husk** | `camel-husk-dashing` | Camel Husk must be dashing | None | `camel-husk-dashing` |
 | **Cat** | `cat-type` | Cat must be a certain type | [Cat Type](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Cat.Type.html), requires 1 or more | `cat-type:siamese` |
 |  | `cat-collar-color` | Cat must have a certain color of collar | [Dye Color](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/DyeColor.html), requires 1 or more | `cat-collar-color:pink` |
 | **Cave Spider** |  |  |  |  |
 | **Chicken** | `chicken-variant` | Chicken must be of a certain variant | [Chicken Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Chicken.Variant.html), requires 1 or more | `chicken-variant:temperate` |
 | **Cod** |  |  |  |  |
+| **Copper Golem** | `copper-golem-waxed` | Copper golem must be waxed | None | `copper-golem-waxed` |
+|  | `copper-golem-weathering-state` | Copper golem must have a specific weathering state | [Weathering State](https://jd.papermc.io/paper/26.1.2/io/papermc/paper/world/WeatheringCopperState.html), required 1 or more | `copper-golem-weathering-state:exposed` |
 | **Cow** | `cow-variant` | Cow must be of a certain variant | [Cow Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Cow.Variant.html), requires 1 or more | `cow-variant:cold` |
+| **Creaking** |  |  |  |  |
 | **Creeper** | `creeper-charged` | Creeper must have been struck by lightning and charged up | None | `creeper-charged` |
 | **Dolphin** |  |  |  |  |
 | **Donkey** |  |  |  |  |
@@ -43,6 +48,7 @@ You can check for conditions that are specific to certain entities.  These condi
 |  | `goat-has-left-horn` | Goat must still have its left horn | None | `goat-has-left-horn` |
 |  | `goat-has-right-horn` | Goat must still have its right horn | None | `goat-has-right-horn` |
 | **Guardian** |  |  |  |  |
+| **Happy Ghast** | `happy-ghast-harness-item` | Happy Ghast must have specific harness item | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html), requires 1 or more | `happy-ghast-harness-item:white_harness` |
 | **Hoglin** | `hoglin-unhuntable` | Hoglin must be unable to be hunted by piglins | None | `hoglin-unhuntable` |
 | **Horse** | `horse-armored` | Horse must have a specific kind of armor | `diamond`, `gold`, `iron`, or `leather`. If no value is provided, will be true if any armor is equipped. | `horse-armored:diamond` |
 |  | `horse-style` | Horse must be of a specific style | [Horse Style](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Horse.Style.html), requires 1 or more | `horse-style:whitefield` |
@@ -54,19 +60,23 @@ You can check for conditions that are specific to certain entities.  These condi
 |  | `llama-color` | Llama must be a specific color | [Llama Color](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Llama.Color.html), requires 1 or more | `llama-color:creamy` |
 | **Magma Cube** | `magma-cube-size` | Magma Cube must be a specific size | Positive Number, requires 1 or more | `magma-cube-size:3` |
 | **Mule** |  |  |  |  |
+| **Mannequin** |  |  |  |  |
 | **Mooshroom** | `mooshroom-variant` | Mooshroom must be of a specific variant | [Mooshroom Variant](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/MushroomCow.Variant.html), requires 1 or more | `mooshroom-variant:brown` |
+| **Nautilus** | `nautilus-armor-item` | Nautilus must have a specific armor item | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html), requires 1 or more | `nautilus-armor-item:netherite_nautilus_armor` |
 | **Ocelot** |  |  |  |  |
 | **Panda** | `panda-main-gene` | Panda must have a specific main gene | [Panda Gene](https://helpch.at/docs/1.16.1/org/bukkit/entity/Panda.Gene.html), requires 1 or more | `panda-main-gene:weak` |
 |  | `panda-hidden-gene` | Panda must have a specific hidden gene | [Panda Gene](https://helpch.at/docs/1.16.1/org/bukkit/entity/Panda.Gene.html), requires 1 or more | `panda-hidden-gene:playful` |
+| **Parched** |  |  |  |  |
 | **Parrot** | `parrot-variant` | Parrot must be a specific variant | [Parrot Variant](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Parrot.Variant.html) | `parrot-variant:blue` |
 | **Phantom** | `phantom-size` | Phantom must be a specific size | Positive Number, requires 1 or more | `phantom-size:2` |
 | **Pig** | `pig-variant` | Pig must be of a certain variant | [Pig Variant](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Pig.Variant.html), requires 1 or more | `pig-variant:warm` |
-| **Piglin Brute** | `piglin-brute-converting` | Piglin Brute must be converting to a zombified piglin | None | `piglin-brute-converting` |
-|  | `piglin-brute-immune-to-zombification` | Piglin Brute must be unable to turn into a zombified piglin | None | `piglin-brute-immune-to-zombification` |
 | **Piglin** | `piglin-converting` | Piglin must be converting to a zombified piglin | None | `piglin-converting` |
 |  | `piglin-immune-to-zombification` | Piglin must be unable to turn into a zombified piglin | None | `piglin-immune-to-zombification` |
 |  | `piglin-unable-to-hunt` | Piglin must be unable to hunt for hoglins | None | `piglin-unable-to-hunt` |
+| **Piglin Brute** | `piglin-brute-converting` | Piglin Brute must be converting to a zombified piglin | None | `piglin-brute-converting` |
+|  | `piglin-brute-immune-to-zombification` | Piglin Brute must be unable to turn into a zombified piglin | None | `piglin-brute-immune-to-zombification` |
 | **Pillager** |  |  |  |  |
+| **Player** |  |  |  |  |
 | **Polar Bear** |  |  |  |  |
 | **Pufferfish** | `pufferfish-puff-state` | Pufferfish must be inflated to a certain amount | Whole number between 0 and 2, 0 being uninflated and 2 being fully inflated. Requires 1 or more. | `pufferfish-puff-state:2` |
 | **Rabbit** | `rabbit-type` | Rabbit must be a specific type | [Rabbit Type](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Rabbit.Type.html), requires 1 or more | `rabbit-type:the_killer_bunny` |
@@ -108,6 +118,7 @@ You can check for conditions that are specific to certain entities.  These condi
 | **Zoglin** |  |  |  |  |
 | **Zombie** | `zombie-converting` | Zombie must be converting to a drowned | None | `zombie-converting` |
 | **Zombie Horse** |  |  |  |  |
+| **Zombie Nautilus** | `zombie-nautilus-armor-item` | Zombie Nautilus must have a specific armor item | [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html), requires 1 or more | `zombie-nautilus-armor-item:netherite_nautilus_armor` |
 | **Zombie Villager** | `zombie-villager-converting` | Zombie Villager must be getting cured | None | `zombie-villager-converting` |
 |  | `zombie-villager-profession` | Zombie Villager must have a specific profession | [Villager Profession](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Villager.Profession.html), requires 1 or more | `zombie-villager-profession:cleric` |
 | **Zombified Piglin** | `zombified-piglin-angry` | Zombified Piglin must be angry at a player | None | `zombified-piglin-angry` |
